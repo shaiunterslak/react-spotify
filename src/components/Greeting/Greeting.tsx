@@ -2,18 +2,18 @@ import { Text, TextProps } from '@mantine/core';
 import React, { FunctionComponent, useEffect, useState } from 'react'
 
 const Greeting: FunctionComponent<TextProps> = ({ ...props }) => {
-  const [greeting, setGreeting] = useState('');
+  const [greeting, setGreeting] = useState('Your next favorite book, in 15 minutes');
 
   useEffect(() => {
     const hours = new Date().getHours();
 
-    if (hours < 12) {
-      setGreeting('Good morning');
-    } else if (hours >= 12 && hours < 18) {
-      setGreeting('Hello');
-    } else {
-      setGreeting('Good evening');
-    }
+    // if (hours < 12) {
+    //   setGreeting('Start');
+    // } else if (hours >= 12 && hours < 18) {
+    //   setGreeting('Hello');
+    // } else {
+    //   setGreeting('Good evening');
+    // }
   }, []);
 
 

@@ -80,11 +80,11 @@ const Home: NextPage = () => {
               <MediaItem key={key} {...item} />
             ))}
           </MediaSection>
-          <MediaSection link='/' title='Your favorite artists'>
+          {/* <MediaSection link='/' title='Your favorite artists'>
             {artists.map((item, key) => (
               <ArtistItem key={key} {...item} />
             ))}
-          </MediaSection>
+          </MediaSection> */}
         </div>
       </div>
     </>

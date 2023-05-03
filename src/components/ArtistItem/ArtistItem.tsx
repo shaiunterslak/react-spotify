@@ -1,5 +1,4 @@
 import { createStyles, Text } from '@mantine/core';
-import Image from 'next/image';
 import React, { FunctionComponent } from 'react'
 import { Artist } from '../../models/Artist';
 
@@ -29,7 +28,7 @@ const ArtistItem: FunctionComponent<AristItemProps> = (item) => {
             <div className='h-full'>
                 <div className='mb-4 relative'>
                     <div className={classes.imgWrapper}>
-                        <Image alt={item.name} src={item.img} layout='fill' />
+                        <img alt={item.name} src={item.img} />
                     </div>
                 </div>
                 <div className='min-h-[62px]'>

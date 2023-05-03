@@ -1,5 +1,4 @@
 import { createStyles, Text } from '@mantine/core'
-import Image from 'next/image'
 import React, { FunctionComponent } from 'react'
 
 type GenreItemProps = {
@@ -38,7 +37,7 @@ const GenreItem: FunctionComponent<GenreItemProps> = ({ img, title, bg, ...rest 
         )}>
             <Text size={smaller ? 24 : 40} weight={700} className='z-10 p-4 absolute break-words max-w-full'>{title}</Text>
             <div className='absolute right-0 bottom-0 flex rotate-[25deg] translate-x-[18%] translate-y-[5%]'>
-                <Image
+                <img
                     alt={title}
                     src={img}
                     width={smaller ? 100 : 128}

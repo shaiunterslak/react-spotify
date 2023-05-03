@@ -1,9 +1,9 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'com.reactispotify.reactspotify',
+  appId: 'com.magicbooks.magicbooks',
   appName: 'react-spotify',
-  webDir: 'public',
+  webDir: 'out',
   bundledWebRuntime: false
 };
 

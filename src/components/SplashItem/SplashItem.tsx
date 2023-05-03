@@ -1,6 +1,5 @@
 import { createStyles, Text } from '@mantine/core';
 import { useHover } from '@mantine/hooks';
-import Image from 'next/image';
 import React, { FunctionComponent, useEffect, useState } from 'react'
 import PlayButton from '../PlayButton/PlayButton';
 import FastAverageColor from 'fast-average-color';
@@ -50,7 +49,7 @@ const SplashItem: FunctionComponent<SplashItemProps> = ({ emitAvgColor, ...item 
     return (
         <div ref={ref} className={cx(classes.wrapper, 'rounded-md overflow-hidden relative h-20 flex cursor-pointer')}>
             <div className={classes.imgWrapper}>
-                <Image src={item.img} width="80" height="80" alt={item.title} />
+                <img src={item.img} width="80" height="80" alt={item.title} />
             </div>
             <div className='flex flex-grow text-white justify-between items-center px-4'>
                 <Text lineClamp={2} size="md" weight={700}>{item.title}</Text>

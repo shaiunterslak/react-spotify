@@ -1,6 +1,5 @@
 import { createStyles, Text } from '@mantine/core'
 import { useHover } from '@mantine/hooks';
-import Image from 'next/image';
 import React, { FunctionComponent } from 'react'
 import PlayButton from '../PlayButton/PlayButton';
 import { motion } from 'framer-motion';
@@ -18,7 +17,6 @@ const useStyles = createStyles({
         backgroundColor: '#333',
         boxShadow: '0 8px 24px rgb(0 0 0 / 50%)',
         position: 'relative',
-        paddingBottom: '100%',
         width: '100%',
         borderRadius: '6px'
     }
@@ -38,7 +36,7 @@ const MediaItem: FunctionComponent<MediaItemProps> = (item) => {
             <div className='h-full'>
                 <div className='mb-4 relative'>
                     <div className={classes.imgWrapper}>
-                        <Image alt={item.title} className='rounded-md' src={item.img} layout='fill' />
+                        <img alt={item.title} className='rounded-md' src={item.img} />
                     </div>
                     <motion.div
                         initial={{ opacity: 0, y: 5 }}
