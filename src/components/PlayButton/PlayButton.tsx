@@ -1,5 +1,5 @@
 import { createStyles } from '@mantine/core'
-import React, { FunctionComponent } from 'react'
+import React, { FunctionComponent, useEffect, useState } from 'react'
 import { PlayerPlay, PlayerPause } from 'tabler-icons-react'
 import { motion } from 'framer-motion'
 import { MediaItem } from '../../models/MediaItem';
@@ -17,12 +17,50 @@ const PlayButton: FunctionComponent<MediaItem> = ({ id, title, interpreter, img 
     const dispatch = useAppDispatch();
     const { id: playingId, playing } = useAppSelector(selectPlaying);
     const { classes, cx } = useStyles();
+    const [isPlaying, setIsPlaying] = useState(false);
+    const [audioContext, setAudioContext] = useState(null);
+    const [audioBuffer, setAudioBuffer] = useState(null);
+    const [audioSource, setAudioSource] = useState(null);
+    
+    const url = '/assets/audio.mp3'
+    const fetchAudio = async (url) => {
+      const response = await fetch(url);
+      const arrayBuffer = await response.arrayBuffer();
+      const context = new AudioContext();
+      const buffer = await context.decodeAudioData(arrayBuffer);
+      setAudioContext(context);
+      setAudioBuffer(buffer);
+    };
+  
+    useEffect(() => {
+      fetchAudio('/assets/audio.mp3');
+    }, []);
+  
+    const play = () => {
+      if (audioContext && audioBuffer && !isPlaying) {
+        const source = audioContext.createBufferSource();
+        source.buffer = audioBuffer;
+        source.connect(audioContext.destination);
+        source.start(0);
+        setAudioSource(source);
+        setIsPlaying(true);
+      }
+    };
+  
+    const stop = () => {
+      if (audioSource) {
+        audioSource.stop(0);
+        setIsPlaying(false);
+      }
+    };
 
     const handleClick = () => {
         if (playingId === id) {
             dispatch(setPlaying(!playing))
+            stop()
         } else {
             dispatch(setNowPlayingMedia({ id, title, interpreter, img }));
+            play()
         }
     }
 

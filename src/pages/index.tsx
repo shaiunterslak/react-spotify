@@ -37,18 +37,13 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Spotify - Web Player</title>
-        <meta property="og:title" title="Spotify - Web Player" key="title" />
+        <title>Magic Books - 15 min books</title>
+        <meta property="og:title" title="Magic Books - 15 min books" key="title" />
         <meta httpEquiv="content-Type" content="text/html; utf-8" />
         <meta httpEquiv="Pragma" content="cache" />
         <meta name="robots" content="INDEX,FOLLOW" />
         <meta httpEquiv="content-Language" content="de" />
-        <meta name="description" content="Spotify Clone made with ReactJS, NextJS and Redux" />
-        <meta name="keywords" content="spotify,clone,spotify clone, reactjs,react,redux,nextjs" />
-        <meta name="author" content="Gamekohl" />
-        <meta name="publisher" content="Gamekohl" />
-        <meta name="copyright" content="Gamekohl" />
-        <meta httpEquiv="Reply-to" content="" />
+        <meta name="description" content="Only the juicy parts of every must-read book" />
         <meta name="expires" content="" />
         <meta name="revisit-after" content="15 days" />
       </Head>

@@ -13,15 +13,18 @@ const initialState: NowPlayingState = {
     playing: false
 };
 
+
 const nowPlayingSlice = createSlice({
     name: 'nowPlaying',
     initialState,
     reducers: {
-        setNowPlayingMedia: (state: NowPlayingState, action: PayloadAction<MediaItem>) => ({
-            ...state,
-            media: action.payload,
-            playing: true
-        }),
+        setNowPlayingMedia: (state: NowPlayingState, action: PayloadAction<MediaItem>) => {
+            return {
+                ...state,
+                media: action.payload,
+                playing: true
+            };
+        },
         setPlaying: (state: NowPlayingState, action: PayloadAction<boolean>) => ({
             ...state,
             playing: action.payload

@@ -28,7 +28,7 @@ const MediaItem: FunctionComponent<MediaItemProps> = (item) => {
     const { classes, cx } = useStyles();
 
     const isPlaying = playing && playingId === item.id;
-
+  
     return (
         <div
             ref={ref}

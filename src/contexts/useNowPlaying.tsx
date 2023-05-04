@@ -7,13 +7,17 @@ type NowPlaying = {
 
 const initialState: NowPlaying = {
     isMinimized: false,
-    setIsMinimized: () => { }
+    setIsMinimized: () => { },
 };
+
+    
 
 const NowPlayingContext = createContext(initialState);
 
 export const NowPlayingProvider: FunctionComponent<{ children: ReactNode }> = ({ children }) => {
     const [value, setValue] = useState(initialState);
+
+  
 
     const setIsMinimized = (value: boolean) => {
         setValue({
@@ -22,10 +26,11 @@ export const NowPlayingProvider: FunctionComponent<{ children: ReactNode }> = ({
         });
     }
 
+   
     return (
         <NowPlayingContext.Provider value={{
             ...value,
-            setIsMinimized
+            setIsMinimized,
         }}>
             {children}
         </NowPlayingContext.Provider>
