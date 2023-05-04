@@ -23,7 +23,7 @@ const PlayButton: FunctionComponent<MediaItem> = ({ id, title, interpreter, img 
     const [audioSource, setAudioSource] = useState(null);
     
     const url = '/assets/audio.mp3'
-    const fetchAudio = async (url) => {
+    const fetchAudio = async (url:string) => {
       const response = await fetch(url);
       const arrayBuffer = await response.arrayBuffer();
       const context = new AudioContext();
